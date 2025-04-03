@@ -1,0 +1,403 @@
+/*ESTILO GERAL*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    height: 100vh;
+    /*altura toma todo espaço da tela*/
+}
+
+.interface {
+    max-width: 1280px;
+    /*largura máxima*/
+    margin: 0 auto;
+}
+
+.flex
+/*na classe geral para ser usada em outras seções*/
+    {
+    display: flex;
+}
+
+.revoluxti-contato button {
+    padding: 10px 0px;
+    font-size: 18px;
+    /*tamanho da fonte*/
+    font-weight: 600;
+    /*peso da fonte*/
+    background-color: brown;
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+h2.titulo {
+    color: #b31111;
+    font-size: 30px;
+    text-align: center;
+    /*centraliza o texto*/
+}
+
+h2.titulo span {
+    color: rgba(212, 25, 25, 0.5);
+}
+
+/*foi removida a tag .header e a tag .revoluxti-contato da estilização para o efeito ser aplicado para em todas classe revoluxti-contato já que a estilização foi movida para o topo do código estilo do site efeito do botão*/
+button:hover, form .btn-enviar input:hover {
+    box-shadow: 0px
+        /*espaçamento vertical*/
+        0px
+        /*espaçamento laterais*/
+        8px
+        /*espalhamento*/
+        #d80b0b
+        /*color do botão*/
+    ;
+    transform: scale(1.08);
+}
+
+/*ESTILO CABEÇALHO*/
+header {
+    padding: 40px 4%;
+    /* configuração para tela não colar ao diminuir*/
+}
+
+header>.interface
+
+/* classe pai dos elementos interface dentro do header para aplicar o dysplay flex*/
+    {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+}
+
+header a {
+    color: rgba(165, 42, 42, 0.616);
+    text-decoration: none;
+    /*tirar a sublimação*/
+    display: inline-block;
+    /* convertendo o link para inline-block o link ainda vai ter as configuração de inline mas também vai ter as propriedades do block*/
+    transition: .2s;
+    /*tempo para concluir a transição do efeito da propriedade transform: scale;*/
+}
+
+header a:hover {
+    color: #fff;
+    transform: scale(1.08);
+    /*(transform: scale; para da o zoom) e só funciona com elementos block lével, e o link é um elemento em line lével que não possui propriedades como width, heigth, e tranform para aplicar essas propriedades no link é preciso converter o link parablock level ou inline blok. (scale  */
+
+}
+
+header nav ul {
+    list-style-type: none;
+}
+
+header nav ul li {
+    display: inline-block;
+    /*para formatar um ao lado do outro*/
+    padding: 0 40px;
+}
+
+/*ESTILO TOPO DO SITE*/
+section.topo-do-site {
+    padding: 40px
+        /*padding padrão em cima e em baixo*/
+        4%
+        /*para não ficar colado ao reduzir a tela*/
+    ;
+}
+
+/* chamando a section.topo-do-site em seguida a classe para ser aplicado o estilo apenas na classe flex, da section.topo-do-site*/
+section.topo-do-site .flex {
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+    /*gap e um espaçamento chamado respiro*/
+}
+
+.topo-do-site h1 {
+    color: #d80b0b;
+    font-size: 42px;
+    line-height: 40px;
+    /*espaçamento entre linhas*/
+}
+
+.topo-do-site .txt-topo-do-site h1 span
+
+/*sempre passar o caminho completo para cada estyle ok*/
+    {
+    color: #d80b0b6e;
+}
+
+.topo-do-site .txt-topo-site p
+
+/*novamente sempre passar o caminho completo para cada estyle ok*/
+    {
+    color: #e42b2bb6;
+    margin: 40px;
+}
+
+
+.topo-do-site .img-topo-site img {
+    margin-left: 50px;
+    position: relative;
+    /* Position relative é usada para alternar uma posição de um elemento em relação a sua posição inicial pq (top, left, height, bottom e rigth só funciona se o elemento tiver diferente do estático que é por padrão, só funciona absolute, relative, fixed e ae vai...*/
+    animation: flutuar 2s ease-in-out infinite alternate;
+    /*chamando a propriedade: animation :flutuar(nome da nossa animação,  2segundos de duração para animação ser concluida, velocidade ease-in-out suave..rapido.. suave, e infinitivamente, e alternate para caminhar 0-100, 100-0 */
+
+}
+
+@keyframes flutuar {
+    0%
+
+    /*para dizer como a img vai está no site em estado inicial*/
+        {
+        top: 0;
+        /*distancia do topo da img*/
+
+    }
+
+    100%
+
+    /*quando a animação tiver acabando*/
+        {
+        top: 30px;
+    }
+}
+
+/*Estilo das Especialidades*/
+section.especialidades {
+    padding: 40px
+        /*em cima e embaixo*/
+        4%;
+    /*para não colar nas laterais quando minimizar a tela*/
+}
+
+section.especialidades .flex {
+    gap: 60px;
+    /*espaçamento entre as box*/
+
+}
+
+/*estylizando as box*/
+.especialidades .especialidades-box {
+    color: #b31111c9;
+    padding: 40px;
+    border-radius: 20px;
+    /*border: 2px solid #b31111; não é mais preciso border*/
+    margin-top: 40px;
+    transition: 1.2s;
+    /*para o zoom ficar mais suave*/
+}
+
+/*configuração de efeitos visuais nas box da especialidade*/
+.especialidades .especialidades-box:hover {
+    transform: scale(1.05);
+    /*não pecisa ter pixels, efeito de zoom, cuidar com exagero*/
+    box-shadow:
+        /*box-shadow espalhamento*/
+        0
+        /*deslocamento vertical*/
+        0
+        /*delocamento laterais*/
+        20px
+        /*espalhamento quanto maior for o valor mais espalhamento*/
+
+
+    ;
+}
+
+
+/*style icons*/
+.especialidades .especialidades-box i {
+    font-size: 70px;
+    color: #d80b0b;
+}
+
+.especialidades .especialidades-box h3 {
+    font-size: 28px;
+    margin: 15px 0;
+    /*espaçamento entre o h3 e icons*/
+}
+
+/*ESTILO SOBRE*/
+section.sobre {
+
+    padding: 80px 4%;
+
+}
+
+section.sobre .flex {
+    align-items: center;
+    /*para alinhamento central dentro da div*/
+    gap: 60px;
+}
+
+.sobre .txt-sobre {
+    color: #b31111;
+}
+
+.sobre .txt-sobre h2 {
+    font-size: 40px;
+    line-height: 40px;
+    /*para diminuir a espaçamento entre h2 e span*/
+    margin-bottom: 30px;
+    /*distancia do titulo para os paragrafos*/
+}
+
+/*span é um elemento inline level, aqui foi configurado o display block para quebrar linha*/
+.sobre .txt-sobre h2 span {
+    color: #fff;
+    display: block;
+}
+
+.sobre .txt-sobre p {
+    margin: 40px 0;
+    /*distancia entre os paragrafos em cima e em baixo 40px, laterais 0*/
+    text-align: justify;
+    /*para o texto ficar enquadrado e justificado*/
+}
+
+/*confg. do button, foi feito um quadrado depois uma borda para arredondar, depois removida a borda, e almentamos a fonte do icon*/
+.sobre .txt-sobre .btn-social button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: #d80b0bcb;
+    font-size: 22px;
+    cursor: pointer;
+    /*para aparecer o dedinho de interação com as redes*/
+    margin: 0 5px;
+    /*em cima e em baixo 0, nas laterias 5px*/
+    transition: .2s;
+}
+
+/*Estilo do portifólio*/
+section.portifolio {
+    padding: 80px 4%;
+    box-shadow: 0 0 40px 10px rgba(165, 42, 42, 0.712);
+    /*efeito linha sombreada*/
+}
+
+section.portifolio .flex {
+    justify-content: space-around;
+    /* primeiro foi feita a tag .img-port, para ter uma boa dimenção dos elementos, em seguida .flex para dar um respiro entre as divs img. Mas para um código mais correto foi movida para cá, tambem seria possivel com gap: 80px*/
+    margin-top: 60px;
+    /*espaço entre as div e o titulo*/
+}
+
+.img-port {
+    width: 360px;
+    height: 320px;
+    background-size: cover;
+    background-position: 100% 0%;
+    transition: 8s;
+    cursor: pointer;
+    border-radius: 20px;
+    position: relative;
+    /* Isso é importante para o posicionamento da overlay */
+}
+
+
+.img-port:hover {
+    background-position: 100% 100%;
+
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    /*ocupar toda largura*/
+    height: 100%;
+    /*ocupar todo comprimento*/
+    background-color: #b42c2c56;
+    /*cor da opacidade*/
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: #d80b0b;
+    /*cor da letra*/
+    opacity: 0;
+    /*opacidade no 0 sem mouse em cima*/
+    transition: 8s;
+    /*time de trancisão da opacidade*/
+}
+
+.overlay:hover {
+    opacity: 1;
+    /* opacidade 1 com o mouse em cima*/
+}
+
+/*Estilo do formulário de contato*/
+section.formulario {
+    padding: 80px 4%;
+    /*poderia ser feito uma classe global e aplicar para as seções, mas a forma separa eéh para cada classe poder ser alterada criando uma classe global é só chamar no html*/
+}
+
+form {
+    max-width: 500px;
+    /*formulario independentemente do tamanho da tela nunca vai passar de 500px de largura*/
+    margin: 0 auto;
+    /*para centralizar o formulario*/
+    /*para colocar as caixas uma embaixo da outra tem duas formas diferentes: input display block aí todos campos vai ficar um embaixo do outro, ou aplicando display:flax*/
+    display: flex;
+    /*ajusta alinhadamente todo conteudo*/
+    justify-content: center;
+    /*centraliza todo conteudo*/
+    flex-direction: column;
+    /*coloca os conteudos em coluna*/
+    gap: 10px;
+    /*espaçamento*/
+    margin-top: 40px;
+}
+
+/*estilizar os campos, form imput chamando as imputs da tag form*/
+form input, form textarea{
+    width: 100%;
+    /*oculpar 100% da tela*/
+    background-color: #b3111185;
+    border: 0;
+    /*tira as bordas do input*/
+    outline: 0;
+    /*tirar a linha que envolve*/
+    padding: 20px 15px;
+    /*em cima embaixo, esquerda direita*/
+    border-radius: 15px;
+    color: #fff;
+    /*cor da letra*/
+    font-size: 20px;
+    /*tamanho da fonte*/
+}
+
+/*Para alterar a placeholder... 
+form input::placeholder{...}*/
+
+
+form textarea{
+    resize:none;/*para a caixa de texto não redimencionar*/
+    max-height: 200px;/*altura maxima após abre a caixa com barra de rolamento*/
+}
+
+form .btn-enviar{
+    margin-top: 20px;/* margin do botão*/
+    text-align: center;
+}
+
+form .btn-enviar input[type=submit]{/*para declarar o tipo especifico da input para trabalharmos se não for determinado ele vai aplicar para todos input que tenha dentro das classes */
+width: 120px;
+background-color: #63121296;
+color: black;/*cor da letra*/
+font-weight: 700 ;/*peso da fonte*/
+cursor: pointer;
+transition: .2s;
+}
+
